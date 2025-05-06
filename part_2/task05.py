@@ -4,6 +4,8 @@ while run:
         n = int(input("N --> "))
         if n > 0:
             run = 0
+        else:
+            print("Введите корректное число N")
     except:
         print("Введите корректное число N")
 
