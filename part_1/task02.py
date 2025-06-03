@@ -1,10 +1,8 @@
 import math
 
-
 a = float(input("Введите a >>> "))
 b = float(input("Введите b >>> "))
 c = float(input("Введите c >>> "))
-
 
 if a == 0:
    print("Это не квадратное уравнение.")
