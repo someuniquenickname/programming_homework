@@ -6,6 +6,3 @@ while True:
     except:
         print("Невалидная строка")
 print(f"Кол-во слов в этой строке равно {result}")
-
-
-
