@@ -1,5 +1,5 @@
 import pprint
-file = open("part_3/files/data.txt", 'r')
+file = open("./files/data.txt", 'r')
 content = file.read()
 content = content.split()
 
