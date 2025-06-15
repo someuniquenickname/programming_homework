@@ -1,18 +1,14 @@
-dict = {"(":")", "{":"}", "[":"]"}
+pairs = {"(": ")", "{": "}", "[": "]"}
 stack = []
 s = input("Строка : ")
 balanced = True
-for i in range(len(s)):
-    if s[i] in dict:
-        stack.append(s[i])
-    elif s[i] == ')' or s[i] == '}' or s[i] == ']':
-        if dict[stack[len(stack) - 1]] == s[i]:
-            stack.pop()
-        else:
+
+for char in s:
+    if char in pairs:
+        stack.append(char)
+    elif char in pairs.values():
+        if not stack or pairs[stack.pop()] != char:
             balanced = False
             break
 
-if balanced == True:
-    print("Всё верно")
-else:
-    print("Ошибка")
+print("Всё верно" if balanced and not stack else "Ошибка")

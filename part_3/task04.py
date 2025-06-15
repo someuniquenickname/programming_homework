@@ -1,15 +1,9 @@
 import random
 
-with open("part_3/files/fio2.txt", "r") as file:
-    file2 = open("part_3/files/mark.csv", "w")
-    for name in file.read().lower().strip().split("\n"):
-        temp = [',']
-        for i in range(random.randint(1,10)):
-            temp.append(str(random.randint(2,5))+",")
-        #print(temp)
-        result = name + ''.join(temp)
-        file2.write(result + "\n")
-        
-        
-file.close()
-file2.close()
+with open('./files/fio2.txt', 'r') as f:
+    names = [line.strip() for line in f if line.strip()]
+
+with open('./files/mark.csv', 'w') as f:
+    for name in names:
+        marks = [str(random.randint(1, 10)) for _ in range(5)]
+        f.write(name + ', ' + ', '.join(marks) + '\n')

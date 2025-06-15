@@ -1,11 +1,5 @@
-line = str(input("-->"))
-
+line = input("-->")
 alphabet = {}
-
-for i in line:
-    if i in alphabet:
-        alphabet[i] += 1
-    else:
-        alphabet[i] = 1
-    
+for char in line:
+    alphabet[char] = alphabet.get(char, 0) + 1
 print(alphabet)

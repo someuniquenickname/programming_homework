@@ -1,23 +1,17 @@
-line = str(input("-->"))
-
+line = input("-->")
 words = line.split()
 line = " ".join(words)
 
-punctuation = ['.', ',', '?', '!', ':', ';']
-newLine = ""
-lastSymbolWasPun = False
+punctuation = '.,:;!?'
+result = ""
+i = 0
 
-for symbol in line:
-    if symbol in punctuation:
-        if not lastSymbolWasPun:
-            newLine = newLine.rstrip()  # Remove trailing space before punctuation
-            newLine += symbol
-            lastSymbolWasPun = True
+while i < len(line):
+    if line[i] in punctuation:
+        result = result.rstrip() + line[i]
     else:
-        newLine += symbol
-        lastSymbolWasPun = False
-line = newLine
+        result += line[i]
+    i += 1
 
-line = line.replace("( ", "(").replace(" )", ")")
-
-print(line)
+result = result.replace("( ", "(").replace(" )", ")")
+print(result)

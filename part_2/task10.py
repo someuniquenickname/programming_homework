@@ -1,8 +1,4 @@
-line = str(input("-->"))
-
-for i in range(len(line)):
-    symbol = line[i:i+1]
-    if symbol in ",.:;-!?":
-        line = line[:i] + " " + line[i+1:]
-
+line = input("-->")
+for punct in ",.:;-!?":
+    line = line.replace(punct, " ")
 print(len(line.split()))

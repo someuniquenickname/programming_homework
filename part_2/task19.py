@@ -1,15 +1,16 @@
 line = str(input("-->"))
+result = []
+current = ""
 
-resline = line
+for char in line:
+    if char == "." or char.isdigit():
+        current += char
+    else:
+        if current:
+            result.append(current)
+            current = ""
 
-for i in range(len(line)):
-    symbol = line[i:i+1]
-    if symbol != ".":
-        try:
-            int(symbol)
-        except ValueError:
-            resline = resline[:i] + " " + resline[i+1:]
+if current:
+    result.append(current)
 
-
-
-print( resline.split() )
+print(result)

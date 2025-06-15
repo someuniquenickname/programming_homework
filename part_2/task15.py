@@ -1,7 +1,4 @@
-line = str(input("-->"))
-word = str(input("-->"))
 
-if word in line:
-    print(line.count(word))
-else:
-    print("Слова в строке нет(")
+line = input("-->")
+word = input("-->")
+print(line.count(word) if word in line else "Слова в строке нет(")

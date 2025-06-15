@@ -1,3 +1,5 @@
+import os
+
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
@@ -7,11 +9,8 @@ def quicksort(arr):
     right = [x for x in arr if x > pivot]
     return quicksort(left) + middle + quicksort(right)
 
-with open('./files/fio.txt', 'r') as f:
-    names = [line.strip() for line in f if line.strip()]
+files = [f for f in os.listdir('.') if os.path.isfile(f)]
+sorted_files = quicksort(files)
 
-sorted_names = quicksort(names)
-
-with open('./files/fio2.txt', 'w') as f2:
-    for name in sorted_names:
-        f2.write(name + '\n')
+for filename in sorted_files:
+    print(filename)

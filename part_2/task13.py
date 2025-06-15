@@ -1,15 +1,4 @@
-line = str(input("-->"))
-
-upper_case = 0
-lower_case = 0
-
-for i in range(len(line)):
-    symbol = line[i:i+1]
-    if symbol == symbol.upper():
-        upper_case += 1
-    elif symbol == symbol.lower():
-        lower_case += 1
-    else:
-        print("ERROR")
-
+line = input("-->")
+upper_case = sum(1 for c in line if c.isupper())
+lower_case = sum(1 for c in line if c.islower())
 print(f"{lower_case=},{upper_case=}")

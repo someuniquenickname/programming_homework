@@ -1,8 +1,9 @@
-import pprint
-file = open("./files/data.txt", 'r')
-content = file.read()
-content = content.split()
+frequency = {}
 
-dict = {i:content.count(i) for i in content}
-pprint.pprint(dict)
-file.close()
+with open('./files/data.txt', 'r') as f:
+    for line in f:
+        num = int(line.strip())
+        frequency[num] = frequency.get(num, 0) + 1
+
+for num, freq in frequency.items():
+    print(f"{num} - {freq}")

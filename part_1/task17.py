@@ -1,11 +1,7 @@
-
 s = int(input('Введите количество строк >>> '))
-
 
 if s <= 0:
    print('Количество строк должно быть положительным')
 else:
-   n = 0
-   for i in range(0, s):
-       n += 1
-       print(f"№{n}: " + '0' * n)
+   for i in range(1, s+1):
+       print(f"№{i}: " + '0' * i)
